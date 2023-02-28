@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,3 +19,7 @@ Route::get('/api/test', function () {
         'message'=> 'Hi from Laravel!'
     ];
 });
+
+Route::get('/api/token', function () { return [csrf_token()]; });
+
+Route::post('/api/register', [RegisterController::class, 'register']);
