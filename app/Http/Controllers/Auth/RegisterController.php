@@ -20,13 +20,11 @@ class RegisterController extends Controller
         ]);
 
         // create user in db
-        $user = User::create([
+        User::create([
             'username' => $request->username,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
-
-        dd($user);
 
         return [
             'status' => 200,

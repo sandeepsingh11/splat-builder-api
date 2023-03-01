@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Support\Facades\Route;
 
@@ -23,3 +24,4 @@ Route::get('/api/test', function () {
 Route::get('/api/token', function () { return [csrf_token()]; });
 
 Route::post('/api/register', [RegisterController::class, 'register']);
+Route::post('/api/login', [LoginController::class, 'login']);
