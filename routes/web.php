@@ -21,7 +21,5 @@ Route::get('/api/test', function () {
     ];
 });
 
-Route::get('/api/token', function () { return [csrf_token()]; });
-
 Route::post('/api/register', [RegisterController::class, 'register']);
 Route::post('/api/login', [LoginController::class, 'login']);
